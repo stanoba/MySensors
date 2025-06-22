@@ -4,7 +4,7 @@ Gateway is built on Wemos D1 Pro v1.0 and [MySWeMosGWShield - WeMos Mini MySenso
 
 Additional hardware changes:
 - added kapton tape and copper foil under the NRF24L01 radio to solve interference between WiFi and NRF24L01 2.4Ghz radios
-- added external antenas for both radio
+- added external antennas for both radio
 
 
 <img src="docs/wemos_gw.jpg" width="700">

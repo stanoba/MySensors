@@ -14,6 +14,6 @@ My MySensors projects for Home Automation.
 
 <img src="Wemos Gateway/docs/wemos_gw.jpg" width="700">
 
-## MailBox Sensor
+## Mailbox Sensor
 
-<img src="MailBox Sensor/docs/mb-sensor1.jpg" width="700">
+<img src="Mailbox Sensor/docs/mb-sensor1.jpg" width="700">

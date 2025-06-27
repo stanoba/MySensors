@@ -58,8 +58,8 @@
 
 #define MY_SIGNAL_REPORT_ENABLED
 
-#define RF24_PA_LEVEL 	   RF24_PA_LOW    //Sensor PA Level == RF24_PA_MIN=-18dBm, RF24_PA_LOW=-12dBm, RF24_PA_HIGH=-6dBM, and RF24_PA_MAX=0dBm
-#define RF24_PA_LEVEL_GW   RF24_PA_LOW  //Gateway PA Level, defaults to Sensor net PA Level.  Tune here if using an amplified nRF2401+ in your gateway.
+// PA Level == RF24_PA_MIN=-18dBm, RF24_PA_LOW=-12dBm, RF24_PA_HIGH=-6dBM, and RF24_PA_MAX=0dBm
+#define MY_RF24_PA_LEVEL RF24_PA_MAX 
 
 #define MY_GATEWAY_MQTT_CLIENT
 #define MY_GATEWAY_ESP8266

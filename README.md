@@ -13,3 +13,7 @@ My MySensors projects for Home Automation.
 ## MySensors MQTT Gateway
 
 <img src="Wemos Gateway/docs/wemos_gw.jpg" width="700">
+
+## MailBox Sensor
+
+<img src="MailBox Sensor/docs/mb-sensor1.jpg" width="700">

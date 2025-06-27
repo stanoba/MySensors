@@ -41,6 +41,11 @@
 // Enable and select radio type attached
 #define MY_RADIO_RF24
 
+#define MY_SIGNAL_REPORT_ENABLED
+
+// PA Level == RF24_PA_MIN=-18dBm, RF24_PA_LOW=-12dBm, RF24_PA_HIGH=-6dBM, and RF24_PA_MAX=0dBm
+#define MY_RF24_PA_LEVEL RF24_PA_LOW
+
 int oldBatteryPcnt = 0;
 #define FULL_BATTERY 3.2 // 3V for 2xAA alkaline. Adjust if you use a different battery setup.
 #define ONE_DAY_SLEEP_TIME  86400000  // report battery status each day at least once
@@ -49,12 +54,13 @@ int oldBatteryPcnt = 0;
 
 #define CHILD_ID 3
 #define BUTTON_PIN  3  // Arduino Digital I/O pin for reed switch
+int oldValue=-1;
 
 // Change to V_LIGHT if you use S_LIGHT in presentation below
 MyMessage msg(CHILD_ID,V_TRIPPED);
 
 void setup()  
-{  
+{
   // Setup the button
   pinMode(BUTTON_PIN,INPUT);
   // Activate internal pull-up
@@ -92,10 +98,11 @@ void loop()
   int batteryPcnt = batteryMillivolts / FULL_BATTERY / 1000.0 * 100 + 0.5;
 
   // check if the door/button is open or closed
-  if (digitalRead(BUTTON_PIN) == HIGH) {
-    send(msg.set("0")); // door open
-  } else {
-    send(msg.set("1")); // door closed
+  int value = digitalRead(BUTTON_PIN);
+  if (value != oldValue) {
+     // Send in the new value
+     send(msg.set(value==HIGH ? 0 : 1));
+     oldValue = value;
   }
 
   // Check battery state

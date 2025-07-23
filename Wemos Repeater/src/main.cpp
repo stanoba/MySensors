@@ -32,7 +32,7 @@
 #define MY_DEBUG
 
 // Use a bit lower baudrate for serial prints on ESP8266 than default in MyConfig.h
-#define MY_BAUD_RATE 9600
+#define MY_BAUD_RATE 115200
 
 #define MY_NODE_ID 250 // Node ID
 
@@ -52,6 +52,11 @@
 void setup()
 {
 	// Setup locally attached sensors
+	// Disable WiFi
+	WiFi.disconnect();
+	WiFi.mode(WIFI_OFF);
+	WiFi.forceSleepBegin();
+	delay(1);
 }
 
 void presentation()

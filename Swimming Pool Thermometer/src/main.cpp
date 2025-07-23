@@ -32,7 +32,7 @@
 
 #define MY_BAUD_RATE 9600
 
-//#define LED_PIN A2
+#define LED_PIN A2
 
 // Enable and select radio type attached
 #define MY_RADIO_RF24
